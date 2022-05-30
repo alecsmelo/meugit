@@ -1,7 +1,13 @@
-varLista = ["Item 0", "Item 1", "Item 2", "Item 3", "Item 4"]
+class Imprimir:
+    def __init__(self, vl1, vl2):
+        self.valor1 = vl1
+        self.valor2 = vl2
+    def calcular(self):
+        self.resultado = self.valor1 + self.valor2
+        print("Resultado: " + str(self.resultado))
 
-def ImprimaLista(list):
-    for j in list:
-        print(j)
+Valores = Imprimir(135,1263)
+print("Valor 1 Cadastrado: " + str(Valores.valor1))
+print("Valor 2 Cadastrado: " + str(Valores.valor2))
 
-ImprimaLista(VarLista)
+Valores.calcular()
