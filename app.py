@@ -9,8 +9,8 @@ class Imprimir:
 Entrada1 = int(input("Digite o Valor: "))
 Endrada2 = int(input("Digite o segundo valor: "))
 
-Valores = Imprimir(Entrada1,Endrada2)
-print("Valor 1 Cadastrado: " + str(Valores.valor1))
-print("Valor 2 Cadastrado: " + str(Valores.valor2))
+Cadastro = Imprimir(Entrada1,Endrada2)
+print("Valor 1 Cadastrado: " + str(Cadastro.valor1))
+print("Valor 2 Cadastrado: " + str(Cadastro.valor2))
 
-Valores.calcular()
+Cadastro.calcular()
