@@ -6,7 +6,10 @@ class Imprimir:
         self.resultado = self.valor1 + self.valor2
         print("Resultado: " + str(self.resultado))
 
-Valores = Imprimir(135,1263)
+Entrada1 = int(input("Digite o Valor: "))
+Endrada2 = int(input("Digite o segundo valor: "))
+
+Valores = Imprimir(Entrada1,Endrada2)
 print("Valor 1 Cadastrado: " + str(Valores.valor1))
 print("Valor 2 Cadastrado: " + str(Valores.valor2))
 
