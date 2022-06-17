@@ -1,28 +1,35 @@
-class Cadastro():
-    def __init__(self, Nome, Cargo, Turno, Salario):
-        self.Nome = Nome
-        self.Cargo = Cargo
-        self.Turno = Turno
-        self.Salario = float(Salario)
+import tkinter
+import tkinter as tk
 
-    def ExibirCasdastro(self):
-        Salario_BRL = "R${:,.2f}".format(self.Salario).replace(",","X").replace(".",",").replace("X",".")
-        print("Funcionário: " + self.Nome)
-        print("Cargo: " + self.Cargo)
-        print("Turno: " + self.Turno)
-        print("Salário: " + str(Salario_BRL))
+class App(tk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        self.pack()
 
-CadNome = input("Digite Nome do Funcionário: ")
-CadCargo = input("Digite o Cargo do Funcionário: ")
-CadTurno = input("Digite o Horário: ")
-CadSalario = input("Digite o Salário: ")
+        self.entrythingy = tk.Entry()
+        self.entrythingy.pack()
 
-CadFunc = Cadastro(CadNome, CadCargo, CadTurno, CadSalario)
-CadFunc.ExibirCasdastro()
+        # Create the application variable.
+        self.contents = tk.StringVar()
+        # Set it to some value.
+        self.contents.set("this is a variable")
+        # Tell the entry widget to watch this variable.
+        self.entrythingy["textvariable"] = self.contents
+
+        # Define a callback for when the user hits return.
+        # It prints the current value of the variable.
+        self.entrythingy.bind('<Key-Return>',
+                             self.print_contents)
+
+    def print_contents(self, event):
+        self.novo = tk.Label(textvariable=self.contents.get())
+        self.novo(text=self.contents.get())
+        self.novo.pack()
 
 
-
-
+root = tk.Tk()
+myapp = App(root)
+myapp.mainloop()
 
 
 
